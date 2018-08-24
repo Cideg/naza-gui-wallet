@@ -1,0 +1,28 @@
+// Copyright (c) 2012-2018, The CryptoNote developers.
+// Licensed under the GNU Lesser General Public License. See LICENSE for details.
+
+// Copyright (c) 2018-2019, The Naza developers.
+// Licensed under the GNU Lesser General Public License. See LICENSE for details.
+
+
+#pragma once
+
+#include <QStyledItemDelegate>
+
+namespace WalletGUI {
+
+class MinerRemoveDelegate : public QStyledItemDelegate {
+  Q_OBJECT
+  Q_DISABLE_COPY(MinerRemoveDelegate)
+
+public:
+  MinerRemoveDelegate(QAbstractItemView* _view, QObject* _parent);
+  ~MinerRemoveDelegate();
+
+  void paint(QPainter* _painter, const QStyleOptionViewItem& _option, const QModelIndex& _index) const override;
+
+private:
+  QAbstractItemView* m_view;
+};
+
+}
